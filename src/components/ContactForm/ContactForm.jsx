@@ -32,19 +32,19 @@ Notify.init({
 
 export default function ContactForm() {
     const dispatch = useDispatch();
-    const contacts = useSelector(selectContacts);
+    // const contacts = useSelector(selectContacts);
 
     const handleSubmit = (values, { resetForm }) => {
 
-        function isDublicateName (values) {
-            return contacts.find(
-            contact => contact.name.toLowerCase() === values.name.toLowerCase()
-            );
-        };
+        // function isDublicateName (values) {
+        //     return contacts.find(
+        //     contact => contact.name.toLowerCase() === values.name.toLowerCase()
+        //     );
+        // };
 
-        if(isDublicateName(values)){
-            return Notify.info(`${values.name} is already in contacts.`)
-        }
+        // if(isDublicateName(values)){
+        //     return Notify.info(`${values.name} is already in contacts.`)
+        // }
 
         dispatch(addContact(values));
         resetForm();
