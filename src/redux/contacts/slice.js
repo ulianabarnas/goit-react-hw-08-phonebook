@@ -30,36 +30,18 @@ export const contactsSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       state.items.push(action.payload);
-      console.log(action.payload);
     },
     [addContact.rejected]: handleRejected,
     [deleteContact.pending]: handlePending,
     [deleteContact.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      return state.items.filter(item => item.id !== action.payload.id);
-      // const index = state.items.findIndex(
-      //   task => task.id === action.payload.id
-      // );
-      // state.items.splice(index, 1);
+      const index = state.items.findIndex(
+        contact => contact.id === action.payload.id
+      );
+      state.items.splice(index, 1);
     },
     [deleteContact.rejected]: handleRejected,
-    //     addContact: {
-    //       reducer(state, action) {
-    //         state.push(action.payload);
-    //       },
-    //       prepare(contact) {
-    //         return {
-    //           payload: {
-    //             ...contact,
-    //             id: nanoid(),
-    //           },
-    //         };
-    //       },
-    //     },
-    //     deleteContact(state, action) {
-    //       return state.filter(item => item.id !== action.payload);
-    //     },
   },
 });
 

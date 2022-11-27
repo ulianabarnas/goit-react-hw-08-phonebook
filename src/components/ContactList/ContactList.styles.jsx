@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FaPhoneAlt } from 'react-icons/fa';
+import { GrClose } from 'react-icons/gr';
 import { Button } from "components/ContactForm/ContactForm.styles";
 
 export const List = styled.ul`
@@ -21,16 +22,21 @@ export const Icon = styled(FaPhoneAlt)`
     margin-right:  ${p => p.theme.space[3]}px;
 `;
 
-export const ContactButton = styled(Button)`
+export const CloseIcon = styled(GrClose)`
+    /* stroke: white; */
+    
+`;
+
+export const CloseButton = styled(Button)`
     display: inline-block;
     width: auto;
     text-align: right;
     margin-top: 0;
     margin-left: auto;
-    background-color: ${p => p.theme.colors.secondary};
-    transition: box-shadow 150ms linear;
+    /* background-color: ${p => p.theme.colors.secondary}; */
+    /* transition: box-shadow 150ms linear; */
 
     :hover, :focus {
-        box-shadow: ${p => p.theme.shadows.normal};
+        /* box-shadow: ${p => p.theme.shadows.normal}; */
     };
 `;

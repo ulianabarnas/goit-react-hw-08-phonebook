@@ -2,12 +2,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 
 import { selectVisibleContacts } from 'redux/selectors';
-import { ContactButton, Icon, Item, List } from "./ContactList.styles";
+import { CloseButton, CloseIcon, Icon, Item, List } from "./ContactList.styles";
+
+
 
 export default function ContactList() {
     // const contacts = useSelector(selectContacts);
     // console.log(contacts);
   const contacts = useSelector(selectVisibleContacts);
+
   const dispatch = useDispatch();
 
 //   const getFilteredContacts = () => {
@@ -20,13 +23,14 @@ export default function ContactList() {
 
   const elements = contacts.map(({ name, phone, id }) => {
     return (
-      <Item key={id}><Icon />{name}: {phone}
-        <ContactButton
+      <Item key={id}>
+        <Icon />{name}: {phone}
+        <CloseButton
           type="button"
           onClick={() => dispatch(deleteContact(id))}
         >
-          Delete
-        </ContactButton>
+          <CloseIcon/>
+        </CloseButton>
       </Item>
     )
   });
