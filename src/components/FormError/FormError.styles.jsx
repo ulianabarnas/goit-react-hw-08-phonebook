@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ErrorText = styled.p`
-    color: red;
-    text-align: left;
-    margin: 4px 0 8px ;
-`
+  color: red;
+  text-align: left;
+  margin: 4px 0 8px;
+`;

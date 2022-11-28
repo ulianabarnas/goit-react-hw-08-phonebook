@@ -1,43 +1,19 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/operations';
-
+import { useSelector } from 'react-redux';
 import { selectVisibleContacts } from 'redux/selectors';
-import { CloseButton, CloseIcon, Icon, Item, List } from "./ContactList.styles";
 
-
+import Contact from 'Contact/Contact';
+import { Item, List } from './ContactList.styles';
 
 export default function ContactList() {
-    // const contacts = useSelector(selectContacts);
-    // console.log(contacts);
   const contacts = useSelector(selectVisibleContacts);
 
-  const dispatch = useDispatch();
-
-//   const getFilteredContacts = () => {
-//     const normalizedFilter = filter.toLowerCase();
-
-//     return contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter));
-//   };
-
-//   const filteredContacts = getFilteredContacts();
-
-  const elements = contacts.map(({ name, phone, id }) => {
-    return (
-      <Item key={id}>
-        <Icon />{name}: {phone}
-        <CloseButton
-          type="button"
-          onClick={() => dispatch(deleteContact(id))}
-        >
-          <CloseIcon/>
-        </CloseButton>
-      </Item>
-    )
-  });
-  
   return (
     <List>
-      {elements}
+      {contacts.map(contact => (
+        <Item key={contact.id}>
+          <Contact contact={contact} />
+        </Item>
+      ))}
     </List>
   );
-};
+}

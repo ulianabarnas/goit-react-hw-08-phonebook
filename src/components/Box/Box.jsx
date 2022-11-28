@@ -1,14 +1,22 @@
-import styled from 'styled-components'
-import { color, space, layout, border, shadow, typography, flexbox } from 'styled-system'
+import styled from 'styled-components';
+import {
+  color,
+  space,
+  layout,
+  border,
+  shadow,
+  typography,
+  flexbox,
+} from 'styled-system';
 
 export const Box = styled('div')(
-    color,
-    space,
-    layout,
-    border,
-    shadow,
-    typography,
-    flexbox,
-)
+  color,
+  space,
+  layout,
+  border,
+  shadow,
+  typography,
+  flexbox
+);
 
-export default Box
+export default Box;
