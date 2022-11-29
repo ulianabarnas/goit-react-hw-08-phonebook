@@ -1,5 +1,6 @@
 import { ErrorMessage } from 'formik';
 import PropTypes from 'prop-types';
+
 import { ErrorText } from './FormError.styles';
 
 export default function FormError({ name }) {
