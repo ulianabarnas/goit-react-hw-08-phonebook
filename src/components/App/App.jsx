@@ -50,7 +50,7 @@ export default function App() {
         <Filter />
         {isLoading && <Loader />}
         {error && <Error>Something goes wrong. {error}.</Error>}
-        {contacts.length > 0 ? (
+        {contacts.length > 0 || isLoading ? (
           <ContactList />
         ) : (
           <Message>This name was not found</Message>
