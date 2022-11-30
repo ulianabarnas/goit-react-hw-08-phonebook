@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
 import {
   selectError,
+  selectFilter,
   selectIsLoading,
   selectVisibleContacts,
 } from 'redux/selectors';
@@ -21,6 +22,7 @@ export default function App() {
   const contacts = useSelector(selectVisibleContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
+  const filter = useSelector(selectFilter);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -48,14 +50,17 @@ export default function App() {
       <Box mt={5} py={5} px={5} bg="primary">
         <Subtitle>Contacts</Subtitle>
         <Filter />
+        
         {isLoading && <Loader />}
+
         {error && <Error>Something goes wrong. {error}.</Error>}
-        {contacts.length > 0 || isLoading ? (
-          <ContactList />
-        ) : (
-          <Message>This name was not found</Message>
-        )}
+
+        {contacts.length > 0 && <ContactList />}
+
+        {(filter !== "" && contacts.length === 0) && <Message>This name was not found</Message>}
       </Box>
     </Box>
   );
 }
+
+{/* <Message>This name was not found</Message> */}
