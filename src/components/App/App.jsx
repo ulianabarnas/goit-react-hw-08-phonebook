@@ -50,7 +50,7 @@ export default function App() {
       <Box mt={5} py={5} px={5} bg="primary">
         <Subtitle>Contacts</Subtitle>
         <Filter />
-        
+
         {isLoading && <Loader />}
 
         {error && <Error>Something goes wrong. {error}.</Error>}
@@ -62,5 +62,3 @@ export default function App() {
     </Box>
   );
 }
-
-{/* <Message>This name was not found</Message> */}
