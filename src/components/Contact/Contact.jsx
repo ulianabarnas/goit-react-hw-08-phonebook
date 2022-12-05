@@ -2,7 +2,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 
 import { CloseButton, Icon } from './Contact.styles';
 
