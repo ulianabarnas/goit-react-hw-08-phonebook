@@ -1,6 +1,6 @@
 import Box from "components/Box/Box";
 import { useAuth } from "hooks/useAuth";
-import { UserName } from "./UsereMenu.styles";
+import { UserName } from "./UserMenu.styles";
 
 
 export default function UserMenu() {

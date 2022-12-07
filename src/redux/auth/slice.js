@@ -1,6 +1,6 @@
 import { register } from './operations';
 
-const { createSlice } = require('@reduxjs/toolkit');
+import { createSlice } from '@reduxjs/toolkit';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -13,8 +13,8 @@ const authSlice = createSlice({
   extraReducers: builder =>
     builder
       .addCase(register.pending, (state, action) => state)
-      .addCase(register.fulfilled, (state, action) => {})
-      .addCase(register.rejected, (state, action) => {}),
+      .addCase(register.fulfilled, (state, action) => state)
+      .addCase(register.rejected, (state, action) => state),
 });
 
 export const authReducer = authSlice.reducer;
