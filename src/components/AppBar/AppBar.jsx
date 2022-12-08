@@ -6,11 +6,11 @@ import { Header } from "./AppBar.styles";
 
 
 export default function AppBar() {
-    const { isLogged } = useAuth();
+    const { isLoggedIn } = useAuth();
   return (
     <Header>
           <Navigation />
-          {isLogged ? <UserMenu/> : <AuthNav/>}
+          {isLoggedIn ? <UserMenu/> : <AuthNav/>}
     </Header>
   )
 }

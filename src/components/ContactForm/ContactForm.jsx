@@ -11,12 +11,12 @@ import FormError from 'components/FormError/FormError';
 
 const initialValues = {
   name: '',
-  phone: '',
+  number: '',
 };
 
 const nameRegExp = /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
 
-const phoneRegExp = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+const numberRegExp = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
 
 const validationSchema = yup.object().shape({
   name: yup
@@ -27,10 +27,10 @@ const validationSchema = yup.object().shape({
     )
     .required('Please fill in the name'),
 
-  phone: yup
+  number: yup
     .string()
     .matches(
-      phoneRegExp,
+      numberRegExp,
       'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
     )
     .required('Please fill in the number'),
@@ -77,9 +77,9 @@ export default function ContactForm() {
 
         <Label>
           Number
-          <Input type="tel" name="phone" />
+          <Input type="tel" name="number" />
         </Label>
-        <FormError name="phone" />
+        <FormError name="number" />
 
         <Button type="submit">Add contact</Button>
       </Form>

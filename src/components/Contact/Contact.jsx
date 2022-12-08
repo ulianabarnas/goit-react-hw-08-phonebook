@@ -9,11 +9,11 @@ import { CloseButton, Icon } from './Contact.styles';
 export default function Contact({ contact }) {
   const dispatch = useDispatch();
 
-  const { name, phone, id } = contact;
+  const { name, number, id } = contact;
   return (
     <>
       <Icon />
-      {name}: {phone}
+      {name}: {number}
       <CloseButton type="button" onClick={() => dispatch(deleteContact(id))}>
         <AiOutlineClose size={18} />
       </CloseButton>
@@ -24,7 +24,7 @@ export default function Contact({ contact }) {
 Contact.propTypes = {
   contact: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
   }).isRequired,
 };
