@@ -10,6 +10,7 @@ export default function Contact({ contact }) {
   const dispatch = useDispatch();
 
   const { name, number, id } = contact;
+  
   return (
     <>
       <Icon />

@@ -11,7 +11,6 @@ export default function UserMenu() {
   
   const handleLogOut = () => dispatch(logOut())
 
-
   return (
     <Box
       display='flex'

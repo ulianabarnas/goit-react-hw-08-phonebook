@@ -1,14 +1,21 @@
 import AppBar from 'components/AppBar/AppBar';
+import Box from 'components/Box/Box';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 export default function SharedLayout() {
   return (
-    <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+    <Box
+      maxWidth="960px"
+      mx="auto"
+      my={0}
+      px={4}
+      py={0}
+    >
       <AppBar />
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
-    </div>
+    </Box>
   );
 }

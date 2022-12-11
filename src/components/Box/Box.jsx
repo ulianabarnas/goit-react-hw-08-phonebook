@@ -18,7 +18,7 @@ export const Box = styled('div')(
   shadow,
   typography,
   flexbox,
-  grid,
+  grid
 );
 
 export default Box;

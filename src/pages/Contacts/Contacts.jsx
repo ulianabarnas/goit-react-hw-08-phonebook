@@ -51,7 +51,7 @@ export default function Contacts() {
         <Subtitle>Contacts</Subtitle>
         <Filter />
 
-        {isLoading && <Loader />}
+        {isLoading && <Loader color="#fff" />}
 
         {error && <Error>Something goes wrong. {error}.</Error>}
 

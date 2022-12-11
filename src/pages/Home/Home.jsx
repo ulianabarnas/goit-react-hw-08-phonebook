@@ -10,7 +10,7 @@ export default function Home() {
       minHeight="calc(100vh - 50px)"
     >
       <Title>
-        Contact manager welcome page{' '}
+        Contact manager welcome page
         <span role="img" aria-label="Greeting icon">
           💁‍♀️
         </span>

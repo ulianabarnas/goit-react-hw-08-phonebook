@@ -1,6 +1,7 @@
-import { Button } from 'components/ContactForm/ContactForm.styles';
-import { FaPhoneAlt } from 'react-icons/fa';
 import styled from 'styled-components';
+import { FaPhoneAlt } from 'react-icons/fa';
+
+import { Button } from 'components/ContactForm/ContactForm.styles';
 
 export const Icon = styled(FaPhoneAlt)`
   margin-right: ${p => p.theme.space[3]}px;

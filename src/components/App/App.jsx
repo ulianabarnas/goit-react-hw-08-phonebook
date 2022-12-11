@@ -1,13 +1,15 @@
-import { lazy } from 'react';
+import { useEffect, lazy } from 'react';
+import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
-import SharedLayout from 'components/SharedLayout/SharedLayout';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import { refreshUser } from 'redux/auth/operations';
-import { useAuth } from 'hooks/useAuth';
+
+import SharedLayout from 'components/SharedLayout/SharedLayout';
 import RestrictedRoute from 'components/RestrictedRoute/RestrictedRoute';
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
+
+import { useAuth } from 'hooks/useAuth';
+import Loader from 'shared/Loader/Loader';
 
 const HomePage = lazy(() => import('../../pages/Home/Home'));
 const RegisterPage = lazy(() => import('../../pages/Register/Register'));
@@ -23,7 +25,7 @@ export default function App() {
   }, [dispatch]);
 
   return (
-    !isRefreshing && (
+    isRefreshing ? <Loader color='#0da3a3' height="100vh"/> : (
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
