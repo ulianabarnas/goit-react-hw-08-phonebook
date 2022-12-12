@@ -1,7 +1,7 @@
 import { ThreeDots } from 'react-loader-spinner';
 import PropTypes from 'prop-types';
 
-export default function Loader({ color, height = '50' }) {
+export default function Loader({ color = '#0da3a3', height = '50' }) {
   return (
     <>
       <ThreeDots
@@ -19,6 +19,6 @@ export default function Loader({ color, height = '50' }) {
 };
 
 Loader.propTypes = {
-  color: PropTypes.string.isRequired,
-  height: PropTypes.string.isRequired,
+  color: PropTypes.string,
+  height: PropTypes.string,
 };

@@ -25,7 +25,7 @@ export default function App() {
   }, [dispatch]);
 
   return (
-    isRefreshing ? <Loader color='#0da3a3' height="100vh"/> : (
+    isRefreshing ? <Loader height="100vh"/> : (
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />

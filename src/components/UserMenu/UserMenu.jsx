@@ -2,6 +2,7 @@ import Box from "components/Box/Box";
 import { useAuth } from "hooks/useAuth";
 import { useDispatch } from "react-redux";
 import { logOut } from "redux/auth/operations";
+import { Button } from "shared/Button/Button.styles";
 import { UserName } from "./UserMenu.styles";
 
 
@@ -17,7 +18,7 @@ export default function UserMenu() {
       alignItems='center'
       gridGap={4}>
           <UserName>Welcome, {user.name}</UserName>
-          <button type="button" onClick={handleLogOut}>Logout</button>
+          <Button type="button" onClick={handleLogOut}>Logout</Button>
     </Box>
   )
 }

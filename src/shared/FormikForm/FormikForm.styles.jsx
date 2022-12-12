@@ -1,14 +1,13 @@
-import { Field } from 'formik';
 import styled from 'styled-components';
+import { Field, Form } from 'formik';
 
-export const Form = styled.form`
+import { Button } from 'shared/Button/Button.styles';
+
+export const StyledForm = styled(Form)`
   width: 320px;
+  margin: 0 auto;
 `;
-// export const Label = styled.label`
-//   display: flex;
-//   flex-direction: column;
-//   margin-bottom: 16px;
-// `;
+
 export const Label = styled.label`
   display: block;
   text-align: left;
@@ -27,3 +26,8 @@ export const Input = styled(Field)`
   border-radius: ${p => p.theme.radii.normal};
   box-sizing: border-box;
 `;
+
+export const StyledButton = styled(Button)`
+   width: 100%;
+   margin-top: ${p => p.theme.space[4]}px;
+`

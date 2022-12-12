@@ -2,6 +2,7 @@ import AppBar from 'components/AppBar/AppBar';
 import Box from 'components/Box/Box';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import Loader from 'shared/Loader/Loader';
 
 export default function SharedLayout() {
   return (
@@ -13,7 +14,7 @@ export default function SharedLayout() {
       py={0}
     >
       <AppBar />
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader/>}>
         <Outlet />
       </Suspense>
     </Box>

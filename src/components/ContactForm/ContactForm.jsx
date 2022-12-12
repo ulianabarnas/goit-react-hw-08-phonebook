@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/selectors';
 
-import { Button, Input, Label } from './ContactForm.styles';
 import FormError from 'components/FormError/FormError';
+import { Input, Label, StyledButton } from 'shared/FormikForm/FormikForm.styles';
 
 const initialValues = {
   name: '',
@@ -58,6 +58,7 @@ export default function ContactForm() {
       return Notify.info(`${values.name} is already in contacts.`);
     }
 
+    console.log(values);
     dispatch(addContact(values));
     resetForm();
   };
@@ -81,7 +82,7 @@ export default function ContactForm() {
         </Label>
         <FormError name="number" />
 
-        <Button type="submit">Add contact</Button>
+        <StyledButton type="submit">Add contact</StyledButton>
       </Form>
     </Formik>
   );
