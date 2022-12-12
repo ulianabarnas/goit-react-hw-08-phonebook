@@ -11,9 +11,9 @@ export default function Home() {
     >
       <Title>
         CREATE YOUR<br/>OWN PHONEBOOK
-        <span role="img" aria-label="Greeting icon">
-          💁‍♀️
-        </span>
+        {/* <span role="img" aria-label="Greeting icon">
+          &#128381;
+        </span> */}
       </Title>
     </Box>
   );

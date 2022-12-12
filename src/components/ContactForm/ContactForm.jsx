@@ -58,7 +58,6 @@ export default function ContactForm() {
       return Notify.info(`${values.name} is already in contacts.`);
     }
 
-    console.log(values);
     dispatch(addContact(values));
     resetForm();
   };
