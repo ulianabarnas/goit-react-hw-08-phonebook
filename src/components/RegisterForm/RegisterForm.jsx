@@ -1,10 +1,19 @@
 import { Formik } from 'formik';
+import * as yup from 'yup';
+
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 
-import * as yup from 'yup';
+import { useAuth } from 'hooks/useAuth';
+
 import FormError from 'components/FormError/FormError';
-import { Input, Label, StyledButton, StyledForm } from 'shared/FormikForm/FormikForm.styles';
+import {
+  Input,
+  Label,
+  StyledButton,
+  StyledForm,
+} from 'shared/FormikForm/FormikForm.styles';
+import { Error } from 'shared/Message/Message.styles';
 
 const initialValues = {
   name: '',
@@ -16,7 +25,8 @@ const validationSchema = yup.object().shape({
   name: yup
     .string()
     .trim('The contact name cannot include leading and trailing spaces')
-    .strict(true),
+    .strict(true)
+    .required('Please fill in the name'),
 
   email: yup
     .string()
@@ -27,16 +37,16 @@ const validationSchema = yup.object().shape({
     .string()
     .trim('The contact name cannot include leading and trailing spaces')
     .strict(true)
-    .min(6, 'Password is too short - should be 6 chars minimum.')
+    .min(7, 'Password is too short - should be 7 chars minimum.')
     .required('Please fill in the password'),
 });
 
 export default function RegisterForm() {
   const dispatch = useDispatch();
+  const { error } = useAuth();
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = values => {
     dispatch(register(values));
-    resetForm();
   };
 
   return (
@@ -63,6 +73,8 @@ export default function RegisterForm() {
           <Input type="password" name="password" />
         </Label>
         <FormError name="password" />
+
+        {error && <Error>{error}</Error>}
 
         <StyledButton type="submit">Register</StyledButton>
       </StyledForm>

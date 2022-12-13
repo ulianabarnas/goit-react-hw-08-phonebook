@@ -26,7 +26,7 @@ export const register = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response.statusText);
     }
   }
 );
@@ -44,7 +44,7 @@ export const logIn = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response.statusText);
     }
   }
 );
@@ -58,7 +58,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     await axios.post('/users/logout');
     clearAuthHeader();
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(error.response.statusText);
   }
 });
 
@@ -70,15 +70,17 @@ export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
     const { token } = thunkAPI.getState().auth;
+
     if (!token) {
       return thunkAPI.rejectWithValue('No valid token');
     }
     setAuthHeader(token);
+
     try {
       const response = await axios.get('/users/current');
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response.statusText);
     }
   }
 );

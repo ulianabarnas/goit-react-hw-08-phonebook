@@ -14,7 +14,9 @@ import Loader from 'shared/Loader/Loader';
 import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
-import { Error, Message, Subtitle, Title } from './Contacts.styles';
+
+import { Subtitle, Title } from './Contacts.styles';
+import { Error, Message } from 'shared/Message/Message.styles';
 
 export default function Contacts() {
   const dispatch = useDispatch();

@@ -5,7 +5,7 @@ export const Link = styled(NavLink)`
   display: inline-block;
   text-decoration: none;
   padding: 12px;
-  font-weight: 700;
+  font-weight: ${p => p.theme.fontWeights.bold};
   color: ${p => p.theme.colors.text};
 
     &.active {

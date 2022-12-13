@@ -1,4 +1,5 @@
 import { useAuth } from 'hooks/useAuth';
+
 import { Link } from './Navigation.styles';
 
 export default function Navigation() {

@@ -3,17 +3,10 @@ export const theme = {
   colors: {
     black: '#000',
     white: '#fff',
-    whiteOpasity: '#ffffff8c',
     text: '#2a2a2a',
     primary: '#0da3a3',
     secondary: '#13c2c2',
-    muted: '#f6f6f6',
-    good: '#32be36',
-    goodHover: '#26a32a',
-    neutral: '#ecd001',
-    neutralHover: '#daba07',
-    bad: '#f87e42',
-    badHover: '#eb6928',
+    error: '#f87e42',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fontSizes: {
@@ -27,10 +20,6 @@ export const theme = {
     normal: 400,
     semibold: 500,
     bold: 700,
-  },
-  lineHeights: {
-    body: 1.8,
-    heading: 1.125,
   },
   borders: {
     none: 'none',
