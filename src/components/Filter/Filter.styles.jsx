@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Label } from 'shared/FormikForm/FormikForm.styles';
+import { Label } from 'components/UI/FormikForm/FormikForm.styles';
 
 export const FilterLabel = styled(Label)`
   color: ${p => p.theme.colors.white};

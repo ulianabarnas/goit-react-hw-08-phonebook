@@ -7,8 +7,13 @@ import { logIn } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
 
 import FormError from 'components/FormError/FormError';
-import { Input, Label, StyledButton, StyledForm } from 'shared/FormikForm/FormikForm.styles';
-import { Error } from 'shared/Message/Message.styles';
+import { Error } from 'components/UI/Message/Message.styles';
+import {
+  Input,
+  Label,
+  StyledButton,
+  StyledForm,
+} from 'components/UI/FormikForm/FormikForm.styles';
 
 const initialValues = {
   email: '',
@@ -20,7 +25,7 @@ const validationSchema = yup.object().shape({
     .string()
     .email('Email must be a valid')
     .required('Please fill in the email'),
-  
+
   password: yup
     .string()
     .trim('The contact name cannot include leading and trailing spaces')
@@ -32,8 +37,8 @@ const validationSchema = yup.object().shape({
 export const LoginForm = () => {
   const dispatch = useDispatch();
   const { error } = useAuth();
-  
-  const handleSubmit = (values) => {
+
+  const handleSubmit = values => {
     dispatch(logIn(values));
   };
 

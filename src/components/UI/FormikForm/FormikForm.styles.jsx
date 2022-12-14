@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Field, Form } from 'formik';
 
-import { Button } from 'shared/Button/Button.styles';
+import { Button } from '../Button/Button.styles';
 
 export const StyledForm = styled(Form)`
   width: 320px;

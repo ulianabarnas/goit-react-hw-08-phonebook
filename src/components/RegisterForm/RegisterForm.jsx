@@ -7,13 +7,14 @@ import { register } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
 
 import FormError from 'components/FormError/FormError';
+
+import { Error } from 'components/UI/Message/Message.styles';
 import {
   Input,
   Label,
   StyledButton,
   StyledForm,
-} from 'shared/FormikForm/FormikForm.styles';
-import { Error } from 'shared/Message/Message.styles';
+} from 'components/UI/FormikForm/FormikForm.styles';
 
 const initialValues = {
   name: '',

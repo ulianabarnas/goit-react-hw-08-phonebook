@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { FaPhoneAlt } from 'react-icons/fa';
-
-import { Button } from 'shared/Button/Button.styles';
+import { Button } from 'components/UI/Button/Button.styles';
 
 export const Icon = styled(FaPhoneAlt)`
   margin-right: ${p => p.theme.space[3]}px;

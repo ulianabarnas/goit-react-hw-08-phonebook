@@ -7,7 +7,7 @@ import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/selectors';
 
 import FormError from 'components/FormError/FormError';
-import { Input, Label, StyledButton } from 'shared/FormikForm/FormikForm.styles';
+import { Input, Label, StyledButton } from 'components/UI/FormikForm/FormikForm.styles';
 
 const initialValues = {
   name: '',

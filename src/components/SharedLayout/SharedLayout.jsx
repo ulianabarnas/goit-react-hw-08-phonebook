@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Loader from 'shared/Loader/Loader';
 import AppBar from 'components/AppBar/AppBar';
-import Box from 'components/Box/Box';
+import Box from 'components/UI/Box/Box';
+import Loader from 'components/UI/Loader/Loader';
 
 export default function SharedLayout() {
   return (

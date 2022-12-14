@@ -3,8 +3,8 @@ import { logOut } from 'redux/auth/operations';
 
 import { useAuth } from 'hooks/useAuth';
 
-import Box from 'components/Box/Box';
-import { Button } from 'shared/Button/Button.styles';
+import Box from 'components/UI/Box/Box';
+import { Button } from 'components/UI/Button/Button.styles';
 import { UserName } from './UserMenu.styles';
 
 export default function UserMenu() {

@@ -1,4 +1,4 @@
-import Box from 'components/Box/Box';
+import Box from 'components/UI/Box/Box';
 
 import { Title } from './Home.styles';
 

@@ -5,11 +5,11 @@ import { Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/operations';
 
 import SharedLayout from 'components/SharedLayout/SharedLayout';
-import RestrictedRoute from 'components/RestrictedRoute/RestrictedRoute';
-import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
+import RestrictedRoute from 'routes/RestrictedRoute/RestrictedRoute';
+import PrivateRoute from 'routes/PrivateRoute/PrivateRoute';
 
 import { useAuth } from 'hooks/useAuth';
-import Loader from 'shared/Loader/Loader';
+import Loader from 'components/UI/Loader/Loader';
 
 const HomePage = lazy(() => import('../../pages/Home/Home'));
 const RegisterPage = lazy(() => import('../../pages/Register/Register'));

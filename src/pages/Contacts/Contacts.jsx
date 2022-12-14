@@ -9,14 +9,15 @@ import {
   selectVisibleContacts,
 } from 'redux/selectors';
 
-import Box from 'components/Box/Box';
-import Loader from 'shared/Loader/Loader';
+import Box from 'components/UI/Box/Box';
+import Loader from 'components/UI/Loader/Loader';
 import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
 
 import { Subtitle, Title } from './Contacts.styles';
-import { Error, Message } from 'shared/Message/Message.styles';
+import { Error, Message } from 'components/UI/Message/Message.styles';
+
 
 export default function Contacts() {
   const dispatch = useDispatch();
