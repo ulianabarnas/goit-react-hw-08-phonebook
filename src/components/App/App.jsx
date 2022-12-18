@@ -24,8 +24,9 @@ export default function App() {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
-    isRefreshing ? <Loader height="100vh"/> : (
+  return isRefreshing ? (
+    <Loader height="100vh" />
+  ) : (
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
@@ -44,9 +45,13 @@ export default function App() {
               <RestrictedRoute component={LoginPage} redirectTo="/contacts" />
             }
           />
-          <Route path="/contacts" element={<PrivateRoute component={ContactsPage} redirectTo="/login"/>} />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute component={ContactsPage} redirectTo="/login" />
+            }
+          />
         </Route>
       </Routes>
-    )
   );
 }
